@@ -16,7 +16,7 @@
     <modules>
         <module>spring_security_client</module>
         <module>employee_system_BE</module>
-        <module>Agriculture_Product_Management_BEgit</module>
+        <module>Agriculture_Product_Management_BE</module>
     </modules>
 
 </project>
