@@ -23,10 +23,7 @@ public class BrandController {
         Page<Brand> brands = brandService.getAllBrands(pageable);
         return ResponseEntity.ok(brands);
     }
-    @PostMapping(value= "/brands")
-    public Brand saveBrand(@RequestBody BrandModel brandModel){
-        return brandService.createBrand(brandModel);
-    }
+
 }
 
 

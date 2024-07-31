@@ -14,5 +14,6 @@ public class ProductModel {
     private MultipartFile image;
     private String mrp;
     private ProductType productType;
+    private String SubType;
     private boolean enable;
 }

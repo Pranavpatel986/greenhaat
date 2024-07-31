@@ -5,20 +5,18 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.2.4</version>
+		<version>3.2.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.agro</groupId>
-	<artifactId>bighaat</artifactId>
+	<groupId>com.greenhaat</groupId>
+	<description>employee management</description>
+	<artifactId>Agriculture_Product_Management_BE</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>bighaat</name>
-	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
-
-
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

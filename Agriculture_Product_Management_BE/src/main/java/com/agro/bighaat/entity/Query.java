@@ -17,6 +17,7 @@ public class Query {
     private String customerEmail;
     private String orderDetails;
     private String queryMessage;
+    private String contactNo;
 
     // Getters and setters
 }

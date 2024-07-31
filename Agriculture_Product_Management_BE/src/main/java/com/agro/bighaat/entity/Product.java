@@ -3,9 +3,12 @@ package com.agro.bighaat.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
 @Entity
 @Data
-public class Product {
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "product_type")
+public abstract class Product {
     @Id
     @SequenceGenerator(
             name = "product_sequence",
@@ -18,7 +21,6 @@ public class Product {
     )
     private Long id;
 
-    ///mapping product with brand
     @ManyToOne(
             cascade = CascadeType.ALL,
             optional = false
@@ -29,11 +31,12 @@ public class Product {
     )
     private Brand brand;
 
-
     @Column(nullable = false)
     private String productName;
+
     @Column(nullable = false)
     private String technicalName;
+
     @Column(columnDefinition = "VARCHAR(255)")
     private String description;
 
@@ -41,11 +44,11 @@ public class Product {
     @Column(name = "image", columnDefinition = "LONGBLOB")
     private byte[] image;
 
-    @Column(name = "max_retail_price", nullable = false,columnDefinition = "VARCHAR(255)")
+    @Column(name = "max_retail_price", nullable = false, columnDefinition = "VARCHAR(255)")
     private String mrp;
 
-    @Enumerated(EnumType.STRING)
-    private ProductType productType;
     private boolean enable;
 
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+    private List<ProductSize> sizes;
 }

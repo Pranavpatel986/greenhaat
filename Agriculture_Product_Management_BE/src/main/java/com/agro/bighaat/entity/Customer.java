@@ -27,4 +27,5 @@ public class Customer {
     private String contactNo;
     private String email;
     private String address;
+    private String customerType;
 }

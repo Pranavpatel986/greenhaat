@@ -2,6 +2,7 @@ package com.agro.bighaat.controller;
 
 import com.agro.bighaat.entity.Query;
 import com.agro.bighaat.repository.QueryRepository;
+import com.agro.bighaat.service.QueryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,15 +13,12 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:3000")
 public class QueryController {
     @Autowired
-    private QueryRepository queryRepository;
+    private QueryService queryService;
 
     @PostMapping
     public Query createQuery(@RequestBody Query query) {
-        return queryRepository.save(query);
+        return queryService.save(query);
     }
 
-    @GetMapping
-    public List<Query> getAllQueries() {
-        return queryRepository.findAll();
-    }
+
 }

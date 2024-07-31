@@ -11,9 +11,10 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/")
+@RequestMapping("/api/v1")
 @CrossOrigin(origins = "http://localhost:3000")
 public class ProductController {
     private final ProductService productService;
@@ -22,14 +23,15 @@ public class ProductController {
         this.productService = productService;
     }
 
+    @GetMapping("/products/search")
+    public ResponseEntity<List<Product>> searchProducts(@RequestParam String keyword) {
+        List<Product> products = productService.searchProducts(keyword);
+        return ResponseEntity.ok(products);
+    }
     @GetMapping("/products")
     public ResponseEntity<Page<Product>> getAllProducts(Pageable pageable) {
         Page<Product> products = productService.getAllProducts(pageable);
         return ResponseEntity.ok(products);
     }
-    @PostMapping(value= "/products")
-    public ResponseEntity<Product> createProduct(@ModelAttribute ProductModel productModel) {
-        Product product = productService.createProduct(productModel);
-        return ResponseEntity.ok(product);
-    }
+
 }

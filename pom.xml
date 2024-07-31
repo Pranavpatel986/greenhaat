@@ -14,9 +14,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <modules>
-        <module>spring_security_client</module>
+<!--        <module>spring_security_client</module>-->
         <module>employee_system_BE</module>
         <module>Agriculture_Product_Management_BE</module>
+        <module>security_client</module>
     </modules>
 
 </project>

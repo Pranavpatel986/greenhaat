@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/v1/")
+@RequestMapping("/api/v1/employee")
 @CrossOrigin(origins = "http://localhost:3000")
 public class EmployeeController {
     private final EmployeeService employeeService;
